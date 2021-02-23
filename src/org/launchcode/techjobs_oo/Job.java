@@ -15,6 +15,19 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
+    public Job() { //Added
+        id = nextId;
+        nextId++;
+    }
+
+    public Job(String name, Employer employer, Location location, PositionType position, CoreCompetency cc){ //Added
+        this();
+        this.name = name;
+        this.location = location;
+        this.positionType = position;
+        this.coreCompetency = cc;
+    }
+
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
