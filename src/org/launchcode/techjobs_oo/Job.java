@@ -1,5 +1,7 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Job {
@@ -45,6 +47,75 @@ public class Job {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    //Add to string method
+
+    @Override
+    public String toString() {
+
+       // return "    ";
+        String idPrint = String.valueOf(this.getId());
+        if(idPrint == null){
+            idPrint = "Data not available";
+        }
+
+
+        String namePrint = this.name;
+        if(this.name == null){
+            namePrint = "Data not available";
+        }
+
+        //Employer
+       String employerPrint = "";
+        if(this.employer.getValue() == ""){
+            employerPrint = "Data not available";
+        }
+
+        else  employerPrint = this.employer.getValue();
+
+        //Location
+        String locationPrint = " ";
+        if(this.location.getValue() == ""){
+            locationPrint = "Data not available";
+        }
+
+        else locationPrint = this.location.getValue();
+
+        //PositionType
+        String positionTypePrint = " ";
+        if(this.positionType.getValue() == ""){
+            positionTypePrint = "Data not available";
+        }
+
+        else positionTypePrint = this.positionType.getValue();
+
+        //Core Competency
+
+        String coreCompetencyPrint = " ";
+        if(this.coreCompetency.getValue() == ""){
+            coreCompetencyPrint = "Data not available";
+        }
+
+        else coreCompetencyPrint = this.coreCompetency.getValue();
+
+
+
+        return " \nID: "+ idPrint + "\n" +
+                "Name: " + namePrint + "\n" +
+                "Employer: " + employerPrint + "\n" +
+                "Location: " + locationPrint + "\n" +
+                "Position Type: " + positionTypePrint + "\n" +
+                "Core Competency: " + coreCompetencyPrint + "\n ";
+
+//        return " \nID: "+ id + "\n" +
+//                "Name: " + this.name + "\n" +
+//                "Employer: " + this.employer + "\n" +
+//                "Location: " + this.location + "\n" +
+//                "Position Type: " + this.positionType + "\n" +
+//                "Core Competency: " + this.coreCompetency + "\n ";
+
+
     }
 
 
@@ -95,5 +166,6 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
 
 }
